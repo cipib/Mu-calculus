@@ -1,0 +1,106 @@
+Script started on Thu 16 Feb 2017 11:46:09 GMT
+[?1034h[mcnamee]s1309096: ./idea.sh cd Desktop/idea-IC-143.1821.5/bin[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/group/teaching/espractical/OpenOCD/flash.sh task4[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[K/group/teaching/espractical/OpenOCD/flash.sh task4[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[K/group/teaching/espractical/OpenOCD/flash.sh task4[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pcd Desktop/idea-IC-143.1821.5/bin[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./idea.sh [K[Kchmod script
+chmod: missing operand after ‘script’
+Try 'chmod --help' for more information.
+[mcnamee]s1309096: chmod script7script5script5script script
+[mcnamee]s1309096: chmod 755 script[4Pscript[2P./idea.sh chmod script755 script[Ks[K./script
+[mcnamee]s1309096: grun [K[K[K[K[Kantlr4 E[KMuGrammar.g4
+bash: antlr4: command not found
+[mcnamee]s1309096: alias antlr4='java -jar /afs/inf.ed.ac.uk/user/s13/s1309096/m u-calculus/antlr-4.6-complete.jar'
+[mcnamee]s1309096: alias antlr4='java -jar /afs/inf.ed.ac.uk/user/s13/s1309096/muu-calculus/antlr-4.6-complete.jar'[Antlr4 MuGrammar.g4[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[mcnamee]s1309096: grun [K[K[K[Kjava[K[K[K[K[KjavaC[Kc MuGrammar*.java
+[mcnamee]s1309096: grun Mugrammar[1PrammarGrammar[C[C[C[C[C[C form -gui
+bash: grun: command not found
+[mcnamee]s1309096: ./script
+[mcnamee]s1309096: ./scriptgrun MuGrammar form -gui
+bash: grun: command not found
+[mcnamee]s1309096: alias grun='java org.antlr.v4.gui.TestRig'
+[mcnamee]s1309096: alias grun='java org.antlr.v4.gui.TestRig'
+[mcnamee]s1309096: alias grun='java org.antlr.v4.gui.TestRig'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18Pgrun MuGrammar form -gui
+mZ.nX.or([a]Z , ,a X  <a>  X)
+line 1:6 token recognition error at: 'o'
+line 1:7 token recognition error at: 'r'
+line 1:8 extraneous input '(' expecting {Var, Prop, 'N', 'and', '|', '<a>', '[a]', 'm', 'n'}
+[mcnamee]s1309096: grun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Calias grun='java org.antlr.v4.gui.TestRig'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18Pgrun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[16P./scriptgrun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[3Pjavac MuGrammar*.java[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pantlr4 MuGrammar.g4
+[mcnamee]s1309096: antlr4 MuGrammar.g4grun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Calias grun='java org.antlr.v4.gui.TestRig'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18Pgrun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[16P./scriptgrun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[3Pjavac MuGrammar*.java[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pantlr4 MuGrammar.g4javac MuGrammar*.java
+[mcnamee]s1309096: javac MuGrammar*.java[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pantlr4 MuGrammar.g4grun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Calias grun='java org.antlr.v4.gui.TestRig'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18Pgrun MuGrammar form -gui
+mZ.nZ X.or([a]Z , <a. >X)
+[mcnamee]s1309096: grun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[3Pjavac MuGrammar*.java[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2Pantlr4 MuGrammar.g4grun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Calias grun='java org.antlr.v4.gui.TestRig'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18Pgrun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[16P./scriptgrun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[16P./scriptgrun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Calias grun='java org.antlr.v4.gui.TestRig'[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[18Pgrun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5Pantlr4 MuGrammar.g4javac MuGrammar*.java[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgrun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kgrun MuGrammar form -gui[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kenv
+XDG_VTNR=1
+MANPATH=/opt/texlive/2015/texmf-dist/doc/man:
+SSH_AGENT_PID=7221
+XDG_SESSION_ID=4
+XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/s1309096
+VIRTUALENVWRAPPER_PROJECT_FILENAME=.project
+ROLES=active-person cohort-ug degree-cs homepagescgiuser homepagesuser homepageswebuser inactive-person matlabclassroom module-ads module-asr module-cs module-ct module-es module-itcs module-mlp module-proj module-sapm msccluster-student person student year-ug4
+VIRTUALENVWRAPPER_SCRIPT=/etc/profile.d/virtualenvwrapper.sh
+IMSETTINGS_INTEGRATE_DESKTOP=yes
+GPG_AGENT_INFO=/run/user/1011250/keyring/gpg:0:1
+GVFS_DISABLE_FUSE=1
+TERM=xterm-256color
+VTE_VERSION=3803
+XDG_MENU_PREFIX=gnome-
+SHELL=/bin/bash
+WISECONFIGDIR=/usr/share/wise2/
+BASH=/usr/bin/bash
+WINDOWID=50331655
+QTDIR=/usr/lib64/qt-3.3
+QTINC=/usr/lib64/qt-3.3/include
+IMSETTINGS_MODULE=none
+QT_GRAPHICSSYSTEM_CHECKED=1
+USER=s1309096
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session1
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+SSH_AUTH_SOCK=/run/user/1011250/keyring/ssh
+XILINXD_LICENSE_FILE=2100@xilinx-lm.inf.ed.ac.uk
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/7094,unix/unix:/tmp/.ICE-unix/7094
+WORKON_HOME=/afs/inf.ed.ac.uk/user/s13/s1309096/.virtualenvs
+XPRINTER=xp_ps_spooldir_tmp_Xprintjobs
+GNOME_SHELL_SESSION_MODE=classic
+DESKTOP_SESSION=dice
+PATH=/afs/inf.ed.ac.uk/user/s13/s1309096/miniconda2/bin:/afs/inf.ed.ac.uk/user/s13/s1309096/miniconda2/bin:/usr/lib64/qt-3.3/bin:/opt/mendeleydesktop/bin:/home/s1309096/bin/:/usr/local/bin/:/usr/lib/jvm/java-1.8.0/bin/:/opt/texlive/2015/bin/x86_64-linux:/opt/matlab-R2015a/bin/:/usr/local/sbin:/usr/bin:/sbin:/afs/inf.ed.ac.uk/user/s13/s1309096/miniconda2/bin:/opt/sicstus-4.0.1/bin
+QT_IM_MODULE=ibus
+VIRTUALENVWRAPPER_HOOK_DIR=/afs/inf.ed.ac.uk/user/s13/s1309096/.virtualenvs
+PWD=/afs/inf.ed.ac.uk/user/s13/s1309096/mu-calculus
+XMODIFIERS=@im=ibus
+CRICHTON_SYS=/etc/crichton.d
+EDITOR=/usr/bin/emacs
+LANG=en_GB.UTF-8
+MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles
+LOADEDMODULES=
+KDEDIRS=/usr
+GIO_USE_NETWORK_MONITOR=netlink
+PS1=[\h]\u: 
+PYCHARM_JDK=/usr/lib/jvm/java-sun
+GDMSESSION=dice
+ENVIRONMENT=el7
+KRB5CCNAME=FILE:/tmp/krb5cc_1011250_jwLC1H
+PS2=[\h]\u..  
+SHLVL=3
+HOME=/afs/inf.ed.ac.uk/user/s13/s1309096
+XDG_SEAT=seat0
+MAPPATH=/etc/amd:/etc
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+ASPELL_CONF=master british
+LOGNAME=s1309096
+CVS_RSH=ssh
+QTLIB=/usr/lib64/qt-3.3/lib
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-XbFVU3LR3Q,guid=2bd2f483ebf21b7a281d051758a58d76
+CLASSPATH=.:/afs/inf.ed.ac.uk/user/s13/s1309096/mu-calculus/antlr-4.6-complete.jar:
+MODULESHOME=/usr/share/Modules
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+ENV_ROOT=/usr/share/defenv/bash
+INFOPATH=/opt/texlive/2015/texmf-dist/doc/info:
+IDEA_JDK=/usr/lib/jvm/java-sun
+XDG_RUNTIME_DIR=/run/user/1011250
+DISPLAY=:0
+QT_PLUGIN_PATH=/usr/lib64/kde4/plugins:/usr/lib/kde4/plugins
+CRICHTON_USR=/afs/inf.ed.ac.uk/user/s13/s1309096/.crichton.d
+XDG_CURRENT_DESKTOP=GNOME
+GTK_IM_MODULE=gtk-im-context-simple
+SshAgent=/usr/bin/ssh-agent
+NO_AT_BRIDGE=1
+SHORT_HOSTNAME=mcnamee
+XAUTHORITY=/var/run/lightdm/s1309096/xauthority
+BASH

@@ -1,0 +1,6 @@
+#!/bin/bash
+export CLASSPATH=".:/afs/inf.ed.ac.uk/user/s13/s1309096/mu-calculus/antlr-4.6-complete.jar:$CLASSPATH"
+alias antlr4='java -jar /afs/inf.ed.ac.uk/user/s13/s1309096/mu-calculus/antlr-4.6-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
+
+

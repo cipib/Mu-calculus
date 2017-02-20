@@ -1,0 +1,146 @@
+XDG_VTNR=1
+MANPATH=/opt/texlive/2015/texmf-dist/doc/man:
+SSH_AGENT_PID=12461
+XDG_SESSION_ID=18
+XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/s1309096
+VIRTUALENVWRAPPER_PROJECT_FILENAME=.project
+ROLES=active-person cohort-ug degree-cs homepagescgiuser homepagesuser homepageswebuser inactive-person matlabclassroom module-ads module-asr module-cs module-ct module-es module-itcs module-mlp module-proj module-sapm msccluster-student person student year-ug4
+VIRTUALENVWRAPPER_SCRIPT=/etc/profile.d/virtualenvwrapper.sh
+IMSETTINGS_INTEGRATE_DESKTOP=yes
+GPG_AGENT_INFO=/run/user/1011250/keyring/gpg:0:1
+GVFS_DISABLE_FUSE=1
+TERM=xterm-256color
+VTE_VERSION=3803
+XDG_MENU_PREFIX=gnome-
+SHELL=/bin/bash
+WISECONFIGDIR=/usr/share/wise2/
+GJS_DEBUG_OUTPUT=stderr
+BASH=/usr/bin/bash
+WINDOWID=41943047
+OLDPWD=/afs/inf.ed.ac.uk/user/s13/s1309096
+QTDIR=/usr/lib64/qt-3.3
+QTINC=/usr/lib64/qt-3.3/include
+GJS_DEBUG_TOPICS=JS ERROR;JS LOG
+IMSETTINGS_MODULE=none
+QT_GRAPHICSSYSTEM_CHECKED=1
+USER=s1309096
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session2
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+SSH_AUTH_SOCK=/run/user/1011250/keyring/ssh
+XILINXD_LICENSE_FILE=2100@xilinx-lm.inf.ed.ac.uk
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/12335,unix/unix:/tmp/.ICE-unix/12335
+WORKON_HOME=/afs/inf.ed.ac.uk/user/s13/s1309096/.virtualenvs
+XPRINTER=xp_ps_spooldir_tmp_Xprintjobs
+GNOME_SHELL_SESSION_MODE=classic
+DESKTOP_SESSION=dice
+PATH=/afs/inf.ed.ac.uk/user/s13/s1309096/miniconda2/bin:/usr/lib64/qt-3.3/bin:/opt/mendeleydesktop/bin:/home/s1309096/bin/:/usr/local/bin/:/usr/lib/jvm/java-1.8.0/bin/:/opt/texlive/2015/bin/x86_64-linux:/opt/matlab-R2015a/bin/:/usr/local/sbin:/usr/bin:/sbin:/afs/inf.ed.ac.uk/user/s13/s1309096/miniconda2/bin:/opt/sicstus-4.0.1/bin
+QT_IM_MODULE=ibus
+VIRTUALENVWRAPPER_HOOK_DIR=/afs/inf.ed.ac.uk/user/s13/s1309096/.virtualenvs
+PWD=/afs/inf.ed.ac.uk/user/s13/s1309096/mu-calculus
+XMODIFIERS=@im=ibus
+CRICHTON_SYS=/etc/crichton.d
+EDITOR=/usr/bin/emacs
+LANG=en_GB.utf8
+GDM_LANG=en_GB.utf8
+MODULEPATH=/usr/share/Modules/modulefiles:/etc/modulefiles
+LOADEDMODULES=
+KDEDIRS=/usr
+GIO_USE_NETWORK_MONITOR=netlink
+PS1=[\h]\u: 
+PYCHARM_JDK=/usr/lib/jvm/java-sun
+GDMSESSION=dice
+PS2=[\h]\u..  
+ENVIRONMENT=el7
+KRB5CCNAME=FILE:/tmp/krb5cc_1011250_a6eTJy
+SHLVL=2
+HOME=/afs/inf.ed.ac.uk/user/s13/s1309096
+XDG_SEAT=seat0
+MAPPATH=/etc/amd:/etc
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+ASPELL_CONF=master british
+LOGNAME=s1309096
+CVS_RSH=ssh
+QTLIB=/usr/lib64/qt-3.3/lib
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-49Ek42xCPU,guid=99b17bae45f1c10e0d142ee058a59c3d
+MODULESHOME=/usr/share/Modules
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+ENV_ROOT=/usr/share/defenv/bash
+INFOPATH=/opt/texlive/2015/texmf-dist/doc/info:
+IDEA_JDK=/usr/lib/jvm/java-sun
+XDG_RUNTIME_DIR=/run/user/1011250
+DISPLAY=:0
+QT_PLUGIN_PATH=/usr/lib64/kde4/plugins:/usr/lib/kde4/plugins
+CRICHTON_USR=/afs/inf.ed.ac.uk/user/s13/s1309096/.crichton.d
+XDG_CURRENT_DESKTOP=GNOME
+GTK_IM_MODULE=gtk-im-context-simple
+SshAgent=/usr/bin/ssh-agent
+SHORT_HOSTNAME=mcnamee
+XAUTHORITY=/var/run/lightdm/s1309096/xauthority
+BASH_FUNC_resize()=() {  eval `command resize`
+}
+BASH_FUNC_setpath()=() {  if [ -f /usr/bin/pathfix ]; then
+ pathfix_binary=/usr/bin/pathfix;
+ else
+ pathfix_binary=/usr/local/bin/pathfix;
+ fi;
+ new_PATH=`$pathfix_binary $@`;
+ [ "$new_PATH" ] && PATH="$new_PATH";
+ export PATH
+}
+BASH_FUNC_setup()=() {  source /usr/local/share/setup/setup.sh $*
+}
+BASH_FUNC_command_not_found_handle()=() {  unset command_not_found_handle;
+ if [[ "$IFS" != ' 	
+' ]]; then
+ _command_not_found $*;
+ fi;
+ function dbg () 
+ { 
+ [[ -n $CRICHTON_DEBUG ]] && echo $1 1>&2
+ };
+ SORT="/usr/bin/_SortBashRC";
+ PATTERN='[0-9][0-9][0-9].*';
+ if [[ -n $CRICHTON_DEBUG ]]; then
+ modules=$($SORT $CRICHTON_SYS/$PATTERN $CRICHTON_USR/$PATTERN);
+ else
+ modules=$($SORT $CRICHTON_SYS/$PATTERN $CRICHTON_USR/$PATTERN 2>&-);
+ fi;
+ dbg "- Found $(/bin/echo $modules | /usr/bin/wc -w 2>&-) modules.";
+ for mod in ${modules} _command_not_found;
+ do
+ dbg "-- $(/bin/basename $mod 2>&-)";
+ CRICHTON_SYS=$CRICHTON_SYS CRICHTON_USR=$CRICHTON_USR "$mod" $*;
+ exit=$?;
+ dbg "[exit $exit]";
+ [[ $exit == 255 ]] && { 
+ _command_not_found $1;
+ break
+ };
+ [[ $exit == 0 ]] && break;
+ done;
+ return 127
+}
+BASH_FUNC_purge()=() {  rm -f *~ .*~ \#*\# tmp*
+}
+BASH_FUNC_colloq()=() {  more /usr/local/alert/misc/coll
+}
+BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`
+}
+BASH_FUNC_gnu()=() {  command gnu -u $LOGNAME $*
+}
+BASH_FUNC__command_not_found()=() {  echo "bash: $1: command not found" 1>&2
+}
+BASH_FUNC_rvirsh()=() {  KVMHOST=$1;
+ shift;
+ if [ "$KVMHOST" ]; then
+ if [ "$KVMHOST" = "." ]; then
+ URI="qemu:///system";
+ else
+ URI="qemu+ssh://$KVMHOST/system";
+ fi;
+ else
+ URI="qemu:///system";
+ fi;
+ virsh --connect $URI $@
+}
+_=/usr/bin/env
