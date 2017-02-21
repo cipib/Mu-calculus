@@ -87,7 +87,8 @@ public class muCalculus {
         public static boolean Rule4(List<formula> form) {
             return true;
         }
-        // TODO: can only be done if Gamma is a boolean or modal formulas
+
+        // TODO: can only be done if Gamma is a boolean or modal formulas (make it as least priority)
         public static boolean Rule5(List<formula> form) {
             for(formula f: form)
                 if(f.toString().startsWith("[a]")) {
@@ -274,30 +275,8 @@ public class muCalculus {
             nodes.add(s);
             return true;
         }
-        public static void main(String[] args) throws IOException {
-            List<formula> abbrev = new ArrayList<formula>();
-            abbrev = abbreviations(new File(args[0]));
-            formulas.add(abbrev.get(0));
-            nodes.add(formulas.get(0).toString());
-            formula e = new formula("E");
-            formulas.add(e);
-            // TODO : go over this example. Is it correct? NO
-//            formula f1  = new formula("nZ.or([a]Z , W)");
-//            f1.abbrev = "Z";
-//            abbrev.add(f1);
-//            formulas.add(f1);
-//            formula f2 = new formula("mW.or([a]W or NP)");
-//            f2.abbrev = "W";
-//            abbrev.add(f2);
-            /*
-            formula f3 = new formula("nX.or(<a>X , Y)");
-            f3.abbrev = "X";
-            formula f4 = new formula("mY.or(<a>Y , P");
-            f4.abbrev = "Y";
-            formulas.add(f3);
-            abbrev.add(f3); abbrev.add(f4);
-            */
-            // TODO : turn all these into methods
+
+        public static boolean isValid(List<formula> formulas, List<formula> abbrev) {
             String s = "";
             for (formula f1 : formulas) {
                 System.out.print(f1.toString() + "    " + f1.names + "           ,      ");
@@ -327,11 +306,41 @@ public class muCalculus {
                 if(valid ==1)
                     break;
             }
-            if(valid == 1 && resetFlag ==1)
+            if(valid == 1 && resetFlag ==1) {
                 System.out.print("\nFormula is valid");
-            else
-                System.out.print("\nFormula is not valid");
+                return true;
+            }
+            else {
+                    System.out.print("\nFormula is not valid");
+                    return false;
+                 }
 
+        }
 
+        public static void main(String[] args) throws IOException {
+            List<formula> abbrev = new ArrayList<formula>();
+            abbrev = abbreviations(new File(args[0]));
+            formulas.add(abbrev.get(0));
+            nodes.add(formulas.get(0).toString());
+            formula e = new formula("E");
+            formulas.add(e);
+            // TODO : go over this example. Is it correct? NO
+//            formula f1  = new formula("nZ.or([a]Z , W)");
+//            f1.abbrev = "Z";
+//            abbrev.add(f1);
+//            formulas.add(f1);
+//            formula f2 = new formula("mW.or([a]W or NP)");
+//            f2.abbrev = "W";
+//            abbrev.add(f2);
+            /*
+            formula f3 = new formula("nX.or(<a>X , Y)");
+            f3.abbrev = "X";
+            formula f4 = new formula("mY.or(<a>Y , P");
+            f4.abbrev = "Y";
+            formulas.add(f3);
+            abbrev.add(f3); abbrev.add(f4);
+            */
+            // TODO : turn all these into methods
+            isValid(formulas, abbrev);
        }
 }
