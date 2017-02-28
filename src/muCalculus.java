@@ -4,6 +4,7 @@
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 // TODO: Priority : thin>reset> 3,4 > 6,7+unfolding >5
@@ -82,7 +83,8 @@ public class muCalculus {
                     names.add(names.get(names.size() - 1));
                     return false;
                 }
-            names.add(names.get(names.size() - 1));
+            if(names.size() != 0)
+                names.add(names.get(names.size() - 1));
             return true;
         }
 
@@ -287,47 +289,56 @@ public class muCalculus {
             }
                 return index;
         }
-
+        public static void addToNode(List<formula> form) {
+            String s = "";
+            List<String> list = new ArrayList<>();
+            for (formula f : formulas)
+                list.add(f.toString() + f.names);
+            Collections.sort(list);
+            for(String str:list)
+                s = s + str;
+            nodes.add(s);
+        }
         public static boolean applyRules(List<formula> abbrev) {
             String s = "";
-//            if(structuralRule2(formulas))
-//                if(structuralRule1(formulas))
-//                    if(Rule7(formulas))
-//                        if(Rule6(formulas))
-//                            if(Rule5(formulas))
-//                                if(Rule3(formulas))
-//                                    if(Rule1(formulas))
-            if(structuralRule1(formulas)) {
+            if(!structuralRule1(formulas)) {
+                addToNode(formulas);
+                return true;
+            }
+            else
                 if (!structuralRule2(formulas)) {
                     System.out.print("RESET\n");
                     resetFlag = 1;
-                    for (formula f : formulas)
-                        s = s + f.toString() + f.names;
-                    nodes.add(s);
+                    addToNode(formulas);
                     return true;
                 }
-            }
-            else {
-                for (formula f : formulas)
-                    s = s + f.toString() + f.names;
-                nodes.add(s);
-                return true;
-            }
-            if(structuralRule1(formulas) && structuralRule2(formulas) && Rule7(formulas) && Rule6(formulas)
-                    && Rule5(formulas) && Rule3(formulas) && Rule1(formulas)) {
-                for (formula f : abbrev)
-                    if (abbrevIndex(formulas, f.abbrev) != -1) {
-                        f.names = formulas.get(abbrevIndex(formulas, f.abbrev)).names;
-                        formulas.remove(formulas.get(abbrevIndex(formulas, f.abbrev)));
-                        formulas.add(f);
-                        return false;
+                else
+                    if(!Rule3(formulas)) {
+                        addToNode(formulas);
+                        return true;
                     }
-            }
-            else
-                for(formula f: formulas)
-                    s = s + f.toString() +f.names;
-            nodes.add(s);
+                    else
+                        if(!Rule7(formulas)) {
+                            addToNode(formulas);
+                            return true;
+                        }
+                        else
+                            if(!Rule6(formulas)) {
+                                addToNode(formulas);
+                                return true;
+                            }
+                            else
+                                for (formula f : abbrev)
+                                    if (abbrevIndex(formulas, f.abbrev) != -1) {
+                                        f.names = formulas.get(abbrevIndex(formulas, f.abbrev)).names;
+                                        formulas.remove(formulas.get(abbrevIndex(formulas, f.abbrev)));
+                                        formulas.add(f);
+                                        return false;
+                                    }
+            Rule5(formulas);
+            addToNode(formulas);
             return true;
+
         }
 
         public static boolean isValid(List<formula> formulas, List<formula> abbrev) {
@@ -373,19 +384,18 @@ public class muCalculus {
 
         public static void main(String[] args) throws IOException {
             List<formula> abbrev = new ArrayList<formula>();
-            abbrev = abbreviations(new File(args[0]));
-            formulas.add(abbrev.get(0));
-            nodes.add(formulas.get(0).toString());
-//            formula e = new formula("E");
-//            formulas.add(e);
+//            abbrev = abbreviations(new File(args[0]));
+//            formulas.add(abbrev.get(0));
+//            nodes.add(formulas.get(0).toString());
+
             // TODO : go over this example. Is it correct? NO
-//            formula f1  = new formula("nZ.or([a]Z , W)");
-//            f1.abbrev = "Z";
-//            abbrev.add(f1);
-//            formulas.add(f1);
-//            formula f2 = new formula("mW.or([a]W or NP)");
-//            f2.abbrev = "W";
-//            abbrev.add(f2);
+            formula f1  = new formula("nZ.or([a]Z , W)");
+            f1.abbrev = "Z";
+            abbrev.add(f1);
+            formulas.add(f1);
+            formula f2 = new formula("mW.or([a]W , NP)");
+            f2.abbrev = "W";
+            abbrev.add(f2);
             /*
             formula f3 = new formula("nX.or(<a>X , Y)");
             f3.abbrev = "X";
