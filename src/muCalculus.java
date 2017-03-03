@@ -8,6 +8,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 // TODO: Priority : thin>reset> 3,4 > 6,7+unfolding >5 DONE
+// TODO: FIX AND rule   -  urgent
+// TODO: Have individual nodes for each tree   - urgent
+// TODO: Check only between the identical nodes for reset/common name
+// TODO: Refractor everything
+// TODO: ADD more variables (maybe X1-X9)
+// TODO: review rule 6 and rule 7
 public class muCalculus {
     public static List<formula> abbrev = new ArrayList<formula>();
     public static List<String> nodes = new ArrayList<>();
@@ -111,7 +117,7 @@ public class muCalculus {
         }
 
         //TODO : AND Rule   , see rule above
-    // TODO: shitty trees are changing states --> maybe do a vector of lists--loks like lists of list may be the solution
+        // TODO: shitty trees are changing states --> maybe do a vector of lists--looks like lists of list may be the solution
         public static boolean Rule4(List<formula> form) {
             for(formula f:form)
                 if(f.toString().startsWith("and")) {
@@ -274,6 +280,7 @@ public class muCalculus {
                 return str1.substring(0, i);
             return null;
         }
+
         /* perform the reset on all formulas having the same prefix name */
         public static boolean doReset(List<formula> form, String prefix) {
             for(formula f: form) {

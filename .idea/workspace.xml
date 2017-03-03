@@ -2,51 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9b0cdfb-0648-4ffe-bfac-2a4a70d3a429" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarBaseListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarLexer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarLexer.tokens" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarParser$AndContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarParser$BoxContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarParser$CommaContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarParser$DiamondContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarParser$FormContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarParser$LparContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarParser$MuContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarParser$NformContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarParser$NuContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarParser$OrContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarParser$RparContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuGrammarParser.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarBaseListener.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarBaseListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarBaseVisitor.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarBaseVisitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarLexer.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarLexer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarListener.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$AndContext.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$AndContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$BoxContext.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$BoxContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$CommaContext.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$CommaContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$DiamondContext.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$DiamondContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$FormContext.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$FormContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$LparContext.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$LparContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$MuContext.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$MuContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$NformContext.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$NformContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$NuContext.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$NuContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$OrContext.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$OrContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$RparContext.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser$RparContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarVisitor.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/com/mu/MuGrammarVisitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/formula.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/formula.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/main.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/muCalculus.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/muCalculus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input" afterPath="$PROJECT_DIR$/input" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mu-calculus.iml" afterPath="$PROJECT_DIR$/mu-calculus.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/.idea/compiler.xml" afterPath="$PROJECT_DIR$/out/production/mu-calculus/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/.idea/misc.xml" afterPath="$PROJECT_DIR$/out/production/mu-calculus/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/mu-calculus/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/mu-calculus.iml" afterPath="$PROJECT_DIR$/out/production/mu-calculus/mu-calculus.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/muCalculus.java" afterPath="$PROJECT_DIR$/src/muCalculus.java" />
     </list>
     <ignored path="mu-calculus.iws" />
@@ -109,11 +64,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MuGrammar.g4" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MuGrammar.g4" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MuGrammar.g4">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.027906977">
+              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -139,14 +94,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="muCalculus.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="muCalculus.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/muCalculus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55813956">
-              <caret line="113" column="121" selection-start-line="113" selection-start-column="121" selection-end-line="113" selection-end-column="121" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
               <folding>
-                <element signature="e#13700#13701#0" expanded="true" />
-                <element signature="e#13753#13754#0" expanded="true" />
+                <element signature="e#13972#13973#0" expanded="true" />
+                <element signature="e#14025#14026#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -256,6 +211,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mu-calculus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mu-calculus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -601,7 +570,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1922" height="1139" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -614,7 +583,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3283433" sideWeight="0.49583334" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.4940476" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.4940476" order="0" side_tool="false" content_ui="combo" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -644,7 +613,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="189" />
+      <option name="time" value="192" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -690,8 +659,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#13700#13701#0" expanded="true" />
-            <element signature="e#13753#13754#0" expanded="true" />
+            <element signature="e#13972#13973#0" expanded="true" />
+            <element signature="e#14025#14026#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -709,8 +678,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#13700#13701#0" expanded="true" />
-            <element signature="e#13753#13754#0" expanded="true" />
+            <element signature="e#13972#13973#0" expanded="true" />
+            <element signature="e#14025#14026#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -782,8 +751,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#13700#13701#0" expanded="true" />
-            <element signature="e#13753#13754#0" expanded="true" />
+            <element signature="e#13972#13973#0" expanded="true" />
+            <element signature="e#14025#14026#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -937,20 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/mu/MuGrammarBaseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/mu/MuGrammarParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/mu/MuGrammarBaseVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -966,26 +921,10 @@
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-1.7.0/src.zip!/java/lang/String.java" />
-    <entry file="file://$PROJECT_DIR$/MuGrammar.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/input">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -998,14 +937,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/com/mu/MuGrammarBaseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/mu/MuGrammarParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13953489">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/muCalculus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55813956">
-          <caret line="113" column="121" selection-start-line="113" selection-start-column="121" selection-end-line="113" selection-end-column="121" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
           <folding>
-            <element signature="e#13700#13701#0" expanded="true" />
-            <element signature="e#13753#13754#0" expanded="true" />
+            <element signature="e#13972#13973#0" expanded="true" />
+            <element signature="e#14025#14026#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MuGrammar.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.027906977">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
