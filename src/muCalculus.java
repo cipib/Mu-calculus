@@ -64,6 +64,7 @@ public class muCalculus {
             }
             if(p ==1 && np ==1) {
                 names.add(names.get(names.size() - 1));
+                System.out.print("Rule1\n");
                 return false;
             }
             if(names.size()!=0)
@@ -77,6 +78,7 @@ public class muCalculus {
                 if(f.toString().startsWith("N")) {
                     for(formula g: form)
                         if(f.toString().substring(1, f.toString().length()).equals(g.toString()))
+                            System.out.print("Rule2\n");
                             return false;
                 }
             if(names.size() != 0)
@@ -109,6 +111,7 @@ public class muCalculus {
                     form.add(f1);
                     form.add(f2);
                     names.add(names.get(names.size() - 1));
+                    System.out.print("Rule3\n");
                     return false;
                 }
             if(names.size() != 0)
@@ -116,7 +119,7 @@ public class muCalculus {
             return true;
         }
 
-        //TODO : AND Rule   , see rule above
+        // TODO : AND Rule   , see rule above
         // TODO: shitty trees are changing states --> maybe do a vector of lists--looks like lists of list may be the solution
         public static boolean Rule4(List<formula> form) {
             for(formula f:form)
@@ -140,16 +143,20 @@ public class muCalculus {
                     f2.nameNumber =f.nameNumber;
                     form.remove(f);
                     List<formula> tree1 = new ArrayList<>();
-                    tree1.addAll(form);
                     List<formula> tree2 = new ArrayList<>();
-                    tree2.addAll(form);
+                    for(formula x: form) {
+                        tree1.add(x);
+                    }
+                    tree2.addAll(tree1);
                     tree1.add(f1);
                     tree2.add(f2);
                     System.out.print("\nTREE branch1 : \n");
                     boolean b1 =isValid(tree1, abbrev);
+                    System.out.print("Rule4\n");
 
                     System.out.print("\nTREE branch2 : \n");
                     boolean b2 = isValid(tree2, abbrev);
+                    System.out.print("Rule4\n");
                     return false;
                 }
 
@@ -180,6 +187,7 @@ public class muCalculus {
             form.add(f1);
             form.addAll(toAdd);
             names.add(names.get(names.size() - 1));
+            System.out.print("Rule5\n");
             return true;
         }
 
@@ -194,6 +202,7 @@ public class muCalculus {
                     form.add(f1);
                     if(names.size() != 0)
                         names.add(names.get(names.size() - 1));
+                    System.out.print("Rule6\n");
                     return false;
                 }
             if(names.size() != 0)
@@ -226,7 +235,7 @@ public class muCalculus {
                     }
                     form.remove(f);
                     form.add(f1);
-
+                    System.out.print("Rule7\n");
                     return false;
                 }
             return true;
@@ -359,8 +368,8 @@ public class muCalculus {
                         }
                         else
                             if(!Rule4(formulas)) {
-                                addToNode(formulas);
-                                return true;
+//                                addToNode(formulas);
+                                return false;
                             }
                             else
                                 if(!Rule7(formulas)) {
@@ -379,7 +388,7 @@ public class muCalculus {
                                                 formulas.remove(formulas.get(abbrevIndex(formulas, f.abbrev)));
                                                 formulas.add(f);
                                                 addToNode(formulas);
-                                                return false;
+                                                return true;
                                             }
             Rule5(formulas);
             addToNode(formulas);
@@ -396,17 +405,13 @@ public class muCalculus {
             System.out.print("\n");
             do {
                 s = "";
-                applyRules(abbrev, formulas);
-                if(tautology ==1) {
-                    //System.out.print("Reached tautology");
-                    return true;
-                }
-                for (formula f : formulas) {
+                for (formula f : formulas)
                     System.out.print(f.toString() + "    " + f.names + "           ,      ");
-                }
-                s = sortFormulas(formulas);
                 System.out.print('\n');
-            } while(!nodes.subList(0, nodes.size()-1).contains(s));
+                if(!applyRules(abbrev, formulas))
+                    break;
+                s = sortFormulas(formulas);
+            } while(!nodes.subList(0, nodes.size()-1).contains(s) && tautology ==0);
             //System.out.print(names);
 
             // Check if there is name that appears in all w
@@ -421,7 +426,7 @@ public class muCalculus {
                 if(valid ==1)
                     break;
             }
-            if(valid == 1 && resetFlag ==1) {
+            if((valid == 1 && resetFlag ==1) || tautology ==1) {
                 resetFlag = 0;
                 tautology = 0;
                 //System.out.print("\nFormula is valid");
@@ -435,7 +440,7 @@ public class muCalculus {
         }
 
         public static void main(String[] args) throws IOException {
-            List<formula> formulas= new ArrayList<>();
+            List<formula> formulas = new ArrayList<>();
 //            abbrev = abbreviations(new File(args[0]));
 //            formulas.add(abbrev.get(0));
 //            nodes.add(formulas.get(0).toString());
@@ -447,12 +452,13 @@ public class muCalculus {
             formula f2 = new formula("mW.and([a]W , NP)");
             f2.abbrev = "W";
 
-            formula f3 = new formula("nX.and(<a>X , Y)");
-            f3.abbrev = "X";
-            formula f4 = new formula("mY.or(<a>Y , P)");
-            f4.abbrev = "Y";
-            formulas.add(f3);
-            abbrev.add(f3); abbrev.add(f4); abbrev.add(f1); abbrev.add(f2);
+//            formula f3 = new formula("nX.and(<a>X , Y)");
+//            f3.abbrev = "X";
+//            formula f4 = new formula("mY.or(<a>Y , P)");
+//            f4.abbrev = "Y";
+//            formulas.add(f3);
+//            abbrev.add(f3); abbrev.add(f4);
+            abbrev.add(f1); abbrev.add(f2);
 
             isValid(formulas, abbrev);
             if(validity == 1)
