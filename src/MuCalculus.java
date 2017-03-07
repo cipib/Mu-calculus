@@ -152,6 +152,35 @@ public class MuCalculus {
         return newList;
     }
 
+                    /* Find prefix to reset on */
+    public static String prefix(String s1, String s2, List<formula> form) {
+        if(s1 == null || s2 == null)
+            return null;
+        int index = 0; int flag = 0;
+        while(index < s1.length() && index < s2.length() && flag == 0) {
+            index = index + 2;
+            if(s1.startsWith(s2.substring(0, index)))
+                for(formula f : form)
+                    if(f.names == null || !f.names.contains(s2.substring(index - 2, index))) // z not in Gamma
+                        flag = 1;
+        }
+        if(flag == 1)
+            return s2.substring(0, index);
+        else
+            return null;
+    }
+
+
+                    /* Perform reset on all formulas that contain prefix*/
+    public static boolean doReset(List<formula> form, String prefix) {
+        for(formula f: form) {
+            if(f.names != null)
+                if(f.names.startsWith(prefix) && f.names.length() > prefix.length())
+                    f.names = prefix;
+        }
+        return true;
+    }
+
 
                     /* Structural Rule 2: Reset rule */
     public static List<formula> structuralRule2(List<formula> form) {
@@ -163,9 +192,12 @@ public class MuCalculus {
             }
         for(formula f : form)
             for(formula g : form) {
-                
+                String prefix = prefix(f.names, g.names, form);
+                if(prefix != null) {
+                    doReset(form, prefix);
+                    break;
+                }
             }
-
         return newList;
     }
 
