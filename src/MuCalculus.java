@@ -72,19 +72,19 @@ public class MuCalculus {
         for(formula f: form)
             if(f.toString().startsWith("or")) {
                     /* first split the formulas properly */
-                int paratheses = 0;
+                int parantheses = 0;
                 int commaIndex;
                 for(commaIndex = 0; commaIndex<f.toString().length(); commaIndex++){
                     if(f.toString().charAt(commaIndex) == '(')
-                        paratheses++;
+                        parantheses++;
                     else if(f.toString().charAt(commaIndex) == ')')
-                        paratheses--;
-                    else if(f.toString().charAt(commaIndex) == ',' && paratheses ==1)
+                        parantheses--;
+                    else if(f.toString().charAt(commaIndex) == ',' && parantheses ==1)
                         break;
                 }
                     /* Then expand OR into two formulas */
                 formula f1 = create(f, f.toString().substring(3, commaIndex -1));
-                formula f2 = create(f, f.toString().substring(commaIndex + 2, f.toString().length() - paratheses));
+                formula f2 = create(f, f.toString().substring(commaIndex + 2, f.toString().length() - parantheses));
                 newList.remove(f);
                 newList.add(f1);
                 newList.add(f2);
@@ -95,12 +95,56 @@ public class MuCalculus {
 
 
                     /* Rule4: F and G --> two trees */
-    public static boolean Rule4(List<formula> form) {
+    public static boolean Rule4(List<formula> form, List<formula> abbrev, List<String> nodes) {
+        List<formula> newList = new ArrayList<>(form);
+        for(formula f: newList)
+            if(f.toString().startsWith("and")) {
+                int parantheses = 0;
+                int commaIndex =0;
+                for(commaIndex =0; commaIndex<f.toString().length(); commaIndex++){
+                    if(f.toString().charAt(commaIndex) == '(')
+                        parantheses++;
+                    else if(f.toString().charAt(commaIndex) == ')')
+                        parantheses--;
+                    else if(f.toString().charAt(commaIndex) == ',' && parantheses ==1)
+                        break;
+                }
+                    /* Then expand OR into two formulas */
+                formula f1 = create(f, f.toString().substring(4, commaIndex -1));
+                formula f2 = create(f, f.toString().substring(commaIndex + 2, f.toString().length() - parantheses));
+
+                    /* Remove the old formula from the list */
+                newList.remove(f);
+
+                    /* Prepare the trees */
+                List<formula> tree1 = new ArrayList<>();
+                List<formula> tree2 = new ArrayList<>();
+                for(formula f3 : newList) {
+                    tree1.add(create(f3, f3.toString()));
+                    tree2.add(create(f3, f3.toString()));
+                }
+                List<String> newNodes = new ArrayList<>(nodes);
+                    /* And add the respective formulas */
+                tree1.add(f1);
+                tree2.add(f2);
+
+                    /* Recursively check the trees */
+                System.out.print("\nTree1 : \n");
+                isValid(tree1, abbrev, newNodes);
+
+                newNodes.clear();
+                newNodes = new ArrayList<>(nodes);
+
+                System.out.print("\nTree2 : \n");
+                isValid(tree2, abbrev, newNodes);
+                return true;
+            }
         return false;
     }
 
 
                     /* Rule5: Modal Rule */
+    // TODO: to apply this rule on the most outermost formula starting with [a]
     public static List<formula> Rule5(List<formula> form) {
         List<formula> newList = new ArrayList<>(form);
         for(formula f : form)
@@ -166,8 +210,8 @@ public class MuCalculus {
                     /* Structural Rule 1: Thin rule */
     public static List<formula> structuralRule1(List<formula> form) {
         List<formula> newList = new ArrayList<>(form);
-        for(formula f : form)
-            for(formula g : form)
+        for(formula f : newList)
+            for(formula g : newList)
                 if(f.toString().equals(g.toString()) && f != g) {
                     if(f.names.startsWith(g.names)) {
                         newList.remove(g);
@@ -177,31 +221,44 @@ public class MuCalculus {
                         newList.remove(f);
                         break;
                     }
+                    break;
                 }
         return newList;
     }
 
                     /* Find prefix to reset on */
-    public static String prefix(String s1, String s2, List<formula> form) {
-        if(s1 == null || s2 == null)
+    public static String prefix(String str1, String str2, List<formula> form) {
+        int i = 0;
+        int flag  = 1;
+        if(str1 == null || str2 == null)
             return null;
-        int index = 0; int flag = 0;
-        while(index < s1.length() && index < s2.length() && flag == 0) {
-            index = index + 2;
-            if(s1.startsWith(s2.substring(0, index)))
-                for(formula f : form)
-                    if(f.names == null || !f.names.contains(s2.substring(index - 2, index))) // z not in Gamma
-                        flag = 1;
+        while(flag == 1 && i < str1.length()-1 && i < str2.length()) {
+            i = i + 2;
+            if(str1.startsWith(str2.substring(0,i)))
+                for(formula f : form) {
+                    if(f.names != null)
+                        if(f.names.length()>= i && f.names.startsWith(str2.substring(0,i)) && f.names.length() == i)
+                            flag = 2;
+                }
+            else
+                flag = 0;
+            if(flag == 1)
+                break;
+            if(flag == 2)
+                flag = 1;
+
         }
-        if(flag == 1)
-            return s2.substring(0, index);
-        else
-            return null;
+        if(i > 0 && i <  str1.length()-1 && i<str2.length() -1)
+            return str1.substring(0, i);
+        return null;
     }
 
 
-                    /* Perform reset on all formulas that contain prefix*/
+
+    /* Perform reset on all formulas that contain prefix*/
     public static boolean doReset(List<formula> form, String prefix) {
+        if(prefix == null)
+            return false;
         for(formula f: form) {
             if(f.names != null)
                 if(f.names.startsWith(prefix) && f.names.length() > prefix.length())
@@ -214,20 +271,21 @@ public class MuCalculus {
                     /* Structural Rule 2: Reset rule */
     public static List<formula> structuralRule2(List<formula> form) {
         List<formula> newList = copy(form);
-        if(newList.size() == 1)
-            if(newList.get(0).names != null && newList.get(0).names.length() > 2) {
+        if(newList.size() == 1) {
+            if (newList.get(0).names != null && newList.get(0).names.length() > 2) {
                 newList.get(0).names = newList.get(0).names.substring(0, 2);
                 return newList;
             }
+        }
         for(formula f : newList)
             for(formula g : newList) {
                 String prefix = prefix(f.names, g.names, form);
                 if(prefix != null) {
                     doReset(newList, prefix);
-                    break;
+                    return newList;
                 }
             }
-        return newList;
+        return form;
     }
 
 
@@ -281,28 +339,37 @@ public class MuCalculus {
 
 
                     /* Apply Rules */
-    public static List<formula> applyRules(List<formula> formulas, List<formula> abbrev) {
+    public static List<formula> applyRules(List<formula> formulas, List<formula> abbrev, List<String> nodes) {
         if(Rule1(formulas) || Rule2(formulas)) {
             tautology = 1;
             return null;
         }
+
         List<formula> form = structuralRule1(formulas);
         if(!form.equals(formulas))
             return form;
+
         form = structuralRule2(formulas);
-        if(!form.equals(formulas)) {
+        if(!getNode(form).equals(getNode(formulas))) {
             resetIndexes.add(nodeIndex);
             return form;
         }
+
         form = Rule3(formulas);
         if(!form.equals(formulas))
             return form;
+
+        if(Rule4(form, abbrev, nodes))
+            return null;
+
         form = Rule7(formulas);
         if(!form.equals(formulas))
             return form;
+
         form = Rule6(formulas);
         if(!form.equals(formulas))
             return form;
+
         for (formula f : abbrev)
             if (abbrevIndex(formulas, f.abbrev) != -1) {
                 f.names = formulas.get(abbrevIndex(formulas, f.abbrev)).names;
@@ -310,9 +377,11 @@ public class MuCalculus {
                 formulas.add(f);
                 return formulas;
             }
+
         form = Rule5(formulas);
         if(!form.equals(formulas))
             return form;
+
         return null;
     }
 
@@ -340,19 +409,22 @@ public class MuCalculus {
 
 
                 /* Validate the formula */
-    public static boolean isValid(List<formula> formulas, List<formula> abbrev) {
-        List<String> nodes = new ArrayList<>();
+    public static boolean isValid(List<formula> formulas, List<formula> abbrev, List<String> nodes) {
+
         List<formula> form = new ArrayList<>();
-        nodes.add(getNode(formulas));
+        //nodes.add(getNode(formulas));
+        printNode(formulas);
         String s = "";
         do {
             nodeIndex ++;
-            formulas = applyRules(formulas, abbrev);
+            formulas = applyRules(formulas, abbrev, nodes);
             if(formulas != null) {
                 printNode(formulas);
                 s = getNode(formulas);
                 nodes.add(getNode(formulas));
             }
+            else
+                return false;
         } while(!nodes.subList(0, nodes.size()-1).contains(s) && tautology == 0);
         return false;
     }
@@ -362,10 +434,27 @@ public class MuCalculus {
     public static void main(String[] args) throws IOException {
         List<formula> formulas = new ArrayList<>();
         List<formula> abbrev = new ArrayList<>();
-        abbrev = abbreviations(new File(args[0]));
-        formulas.add(abbrev.get(0));
-        List<formula> form = Collections.unmodifiableList(formulas);
-        isValid(formulas, abbrev);
+        List<String> nodes = new ArrayList<>();
+
+//        abbrev = abbreviations(new File(args[0]));
+//        System.out.print(abbrev);
+//        formulas.add(abbrev.get(0));
+//        List<formula> form = Collections.unmodifiableList(formulas);
+
+        formula f1  = new formula("nZ.or([a]Z , W)");
+        f1.abbrev = "Z";
+        formulas.add(f1);
+        formula f2 = new formula("mW.and([a]W , NP)");
+        f2.abbrev = "W";
+        abbrev.add(f1); abbrev.add(f2);
+//        formula f3 = new formula("nX.and(<a>X , Y)");
+//        f3.abbrev = "X";
+//        formula f4 = new formula("mY.or(<a>Y , P)");
+//        f4.abbrev = "Y";
+//        formulas.add(f3);
+//        abbrev.add(f3); abbrev.add(f4);
+        isValid(formulas, abbrev, nodes);
+
 
     }
 
