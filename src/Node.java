@@ -7,6 +7,7 @@ public class Node {
     private List<formula> key;
     private Node left;
     private Node right;
+    private List<Node> parents;
 
     Node (List<formula> key) {
         this.key = key;
@@ -36,5 +37,13 @@ public class Node {
 
     public Node getRight() {
         return right;
+    }
+
+    public List<Node> getParents(List<Node> parents){
+        return parents;
+    }
+
+    public void addParent(Node node) {
+        parents.add(node);
     }
 }

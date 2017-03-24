@@ -410,7 +410,7 @@ public class MuCalculus {
     }
 
 
-                /* Validate the formula */
+                /* Validate the formula */+
     public static boolean isValid(Node formulas, List<formula> abbrev, List<String> nodes) {
 
         //nodes.add(getNode(formulas));
