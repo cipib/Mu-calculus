@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -7,7 +9,7 @@ public class Node {
     private List<formula> key;
     private Node left;
     private Node right;
-    private List<Node> parents;
+    private List<String> parents = new ArrayList<>();
 
     Node (List<formula> key) {
         this.key = key;
@@ -39,11 +41,25 @@ public class Node {
         return right;
     }
 
-    public List<Node> getParents(List<Node> parents){
+    public List<String> getParents(){
         return parents;
     }
 
-    public void addParent(Node node) {
-        parents.add(node);
+    public static String getNode(Node node) {
+        String s = "";
+        List<String> list = new ArrayList<>();
+        for (formula f : node.getKey())
+            list.add(f.toString() + f.names);
+        Collections.sort(list);
+        for(String str:list)
+            s = s + str;
+        return s;
+    }
+
+    public void setParents(Node node) {
+        if(node.getParents() != null)
+            parents.addAll(node.getParents());
+
+        parents.add(getNode(node));
     }
 }
