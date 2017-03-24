@@ -1,22 +1,24 @@
+import java.util.List;
+
 /**
  * Created by s1309096 on 23/03/17.
  */
 public class Node {
-    private formula key;
+    private List<formula> key;
     private Node left;
     private Node right;
 
-    Node (formula key) {
+    Node (List<formula> key) {
         this.key = key;
         right = null;
         left = null;
     }
 
-    public void setKey(formula key) {
+    public void setKey(List<formula> key) {
         this.key = key;
     }
 
-    public formula getKey() {
+    public List<formula> getKey() {
         return key;
     }
 
