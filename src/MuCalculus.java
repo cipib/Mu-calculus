@@ -12,6 +12,8 @@ public class MuCalculus {
     private static List<Integer> resetIndexes = new ArrayList<>();
     private static int nodeIndex =0;
     private static List<String> nodes = new ArrayList<>();
+    private static int valid = 0;
+    private static int validity = 1;
 
                     /* RULE1: P or not P -> valid */
     public static boolean Rule1(Node form) {
@@ -214,18 +216,17 @@ public class MuCalculus {
                     /* Structural Rule 1: Thin rule */
     public static Node structuralRule1(Node form) {
         List<formula> newList = new ArrayList<>(form.getKey());
-        for(formula f : newList)
-            for(formula g : newList)
+        for(formula f : form.getKey())
+            for(formula g : form.getKey())
                 if(f.toString().equals(g.toString()) && f != g) {
                     if(f.names.startsWith(g.names)) {
                         newList.remove(g);
-                        break;
+                        return new Node(newList);
                     }
                     else if(g.names.startsWith(f.names)) {
                         newList.remove(f);
-                        break;
+                        return new Node(newList);
                     }
-                    break;
                 }
         return new Node(newList);
     }
@@ -360,6 +361,8 @@ public class MuCalculus {
         {
             resetIndexes.add(nodeIndex);
             bTree.add(formulas, formulas, "left");
+            form.addParrent("reset");
+            System.out.print("reset\n");
             form.setParents(formulas);
             return form;
         }
@@ -396,7 +399,9 @@ public class MuCalculus {
                 abb.add(f);
                 bTree.add(formulas, form, "left");
                 form.setParents(formulas);
-                return new Node(abb);
+                Node abbreviation = new Node(abb);
+                abbreviation.setParents(form);
+                return abbreviation;
             }
 
         form = Rule5(formulas);
@@ -435,9 +440,13 @@ public class MuCalculus {
                 /* Validate the formula */
     public static boolean isValid(Node formulas, List<formula> abbrev, BinaryTree bTree) {
         printNode(formulas.getKey());
+        int index = 0;
         do {
             nodes = formulas.getParents();
             nodeIndex ++;
+            if(formulas.getParents().contains(getNode(formulas)))
+                return false;
+            index = formulas.getParents().indexOf(getNode(formulas));
             formulas = applyRules(formulas, abbrev, bTree);
             if(formulas != null) {
                 printNode(formulas.getKey());
@@ -446,6 +455,15 @@ public class MuCalculus {
                 return false;
 
         } while(!formulas.getParents().contains(getNode(formulas)));
+        if(formulas.getParents().indexOf("reset")> index -1)
+            valid = 1;
+        if(valid ==1 || tautology ==1) {
+            valid = 0;
+            tautology = 0;
+        }
+        else {
+            validity = 0;
+        }
         return false;
     }
 
@@ -456,25 +474,28 @@ public class MuCalculus {
         List<formula> abbrev = new ArrayList<>();
         List<String> nodes = new ArrayList<>();
 
-//        abbrev = abbreviations(new File(args[0]));
-//        System.out.print(abbrev);
-//        formulas.add(abbrev.get(0));
-//        Node form = Collections.unmodifiableList(formulas);
+        abbrev = abbreviations(new File(args[0]));
+        System.out.print(abbrev);
+        formulas.add(abbrev.get(0));
 
-        formula f1  = new formula("nZ.or([a]Z , W)");
-        f1.abbrev = "Z";
-        formulas.add(f1);
-        formula f2 = new formula("mW.and([a]W , NP)");
-        f2.abbrev = "W";
-        abbrev.add(f1); abbrev.add(f2);
-        formula f3 = new formula("nX.and(<a>X , Y)");
-        f3.abbrev = "X";
-        formula f4 = new formula("mY.or(<a>Y , P)");
-        f4.abbrev = "Y";
-        formulas.add(f3);
-        abbrev.add(f3); abbrev.add(f4);
+//        formula f1  = new formula("nZ.or([a]Z , W)");
+//        f1.abbrev = "Z";
+//        formulas.add(f1);
+//        formula f2 = new formula("mW.and([a]W , NP)");
+//        f2.abbrev = "W";
+//        abbrev.add(f1); abbrev.add(f2);
+//        formula f3 = new formula("nX.and(<a>X , Y)");
+//        f3.abbrev = "X";
+//        formula f4 = new formula("mY.or(<a>Y , P)");
+//        f4.abbrev = "Y";
+//        formulas.add(f3);
+//        abbrev.add(f3); abbrev.add(f4);
         Node root = new Node(formulas);
         isValid(root, abbrev, new BinaryTree(formulas));
+        if(validity == 1)
+            System.out.print("Formula is valid");
+        else
+            System.out.print(("Formula is not valid"));
 
 
     }

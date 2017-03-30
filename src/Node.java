@@ -62,4 +62,7 @@ public class Node {
 
         parents.add(getNode(node));
     }
+    public void addParrent(String reset) {
+        parents.add(reset);
+    }
 }

@@ -1,1 +1,1 @@
-nZ.mX.and(or([a]Z , <a>X) , and(X , Z))
+nZ.mX.or([a]Z , <a>X)
