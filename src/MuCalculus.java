@@ -329,6 +329,7 @@ public class MuCalculus {
 //        Collections.reverse(abbrev);
 //        return abbrev;
 //    }
+    //TODO: shrink the formula
     public static List<formula>abbreviations(File input) throws IOException {
         List<formula> abbrev = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(input))) {
