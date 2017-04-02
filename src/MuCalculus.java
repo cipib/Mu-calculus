@@ -135,7 +135,7 @@ public class MuCalculus {
                 leftNode.setParents(form);
 
                 Node rightNode = new Node(tree2);
-                leftNode.setParents(form);
+                rightNode.setParents(form);
                     /* Recursively check the trees */
                 System.out.print("\nTree1 : \n");
                 isValid(leftNode, abbrev, bTree);
@@ -190,7 +190,7 @@ public class MuCalculus {
         f1.form = f.toString().substring(3);
         if(f.names == null) {
             f1.nameNumber = 1;
-            f1.names = f.abbrev.toLowerCase() + f1.nameNumber;
+            f1.names = Character.toString(f.toString().toLowerCase().charAt(1)) + f1.nameNumber;
         }
         else {
             f1.nameNumber = f.names.length()/2 + 1;
@@ -272,12 +272,13 @@ public class MuCalculus {
         return true;
     }
 
-
+    public static List<String> parents = new ArrayList<>();
                     /* Structural Rule 2: Reset rule */
     public static boolean structuralRule2(Node form) {
         List<formula> newList = form.getKey();
         if(form.getKey().size() == 1) {
             if (newList.get(0).names != null && newList.get(0).names.length() > 2) {
+                parents = form.getParents();
                 form.getKey().get(0).names = form.getKey().get(0).names.substring(0, 2);
                 return true;
             }
@@ -286,6 +287,7 @@ public class MuCalculus {
             for(formula g : form.getKey()) {
                 String prefix = prefix(f.names, g.names, form);
                 if(prefix != null) {
+                    parents = form.getParents();
                     doReset(form.getKey(), prefix);
                     return true;
                 }
@@ -305,26 +307,52 @@ public class MuCalculus {
     }
 
 
-                    /* Find abbreviations of formulas */
-    public static List<formula> abbreviations(File input) throws IOException {
+//                    /* Find abbreviations of formulas */
+//    public static List<formula> abbreviations(File input) throws IOException {
+//        List<formula> abbrev = new ArrayList<>();
+//        try (BufferedReader br = new BufferedReader(new FileReader(input))) {
+//            String line;
+//            int k = 0;
+//            while ((line = br.readLine()) != null) {
+//                for (int i = line.length() - 1; i >= 0; i--) {
+//                    k = line.length();
+//                    if ((line.charAt(i) == 'm' || line.charAt(i) == 'n') && line.charAt(i+1) != 'd') {
+//                        formula f = new formula(line.substring(i, k));
+//                        f.abbrev = Character.toString(findFirstVariable(line.substring(i, k)));
+//                        line = line.substring(0, i) + f.abbrev;
+//                        abbrev.add(f);
+//                        k = i;
+//                    }
+//                }
+//            }
+//        }
+//        Collections.reverse(abbrev);
+//        return abbrev;
+//    }
+    public static List<formula>abbreviations(File input) throws IOException {
         List<formula> abbrev = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(input))) {
-            String line;
-            int k = 0;
+            String line; int j;
             while ((line = br.readLine()) != null) {
-                for (int i = line.length() - 1; i >= 0; i--) {
-                    k = line.length();
-                    if ((line.charAt(i) == 'm' || line.charAt(i) == 'n') && line.charAt(i+1) != 'd') {
-                        formula f = new formula(line.substring(i, k));
-                        f.abbrev = Character.toString(findFirstVariable(line.substring(i, k)));
-                        line = line.substring(0, i) + f.abbrev;
+                for( int i = 0; i < line.length(); i++)
+                    if(line.charAt(i) == 'm' || line.charAt(i) == 'n') {
+                        int parantheses = 0;
+                        for (j = i + 1; j < line.length(); j++) {
+                            if (line.charAt(j) == '(')
+                                parantheses++;
+                            if(line.charAt(j) == ')')
+                                parantheses--;
+                            if(line.charAt(j) == ' ' && parantheses == 0)
+                                break;
+                            if(parantheses == -1)
+                                break;
+                        }
+                        formula f = new formula(line.substring(i, j));
+                        f.abbrev = Character.toString(line.charAt(i + 1));
                         abbrev.add(f);
-                        k = i;
                     }
                 }
             }
-        }
-        Collections.reverse(abbrev);
         return abbrev;
     }
 
@@ -345,6 +373,9 @@ public class MuCalculus {
 
                     /* Apply Rules */
     public static Node applyRules(Node formulas, List<formula> abbrev, BinaryTree bTree) {
+        for(formula f: formulas.getKey())
+            if(f.toString().startsWith("("))
+                f.form = f.toString().substring(1, f.toString().length() -1);
         if(Rule1(formulas) || Rule2(formulas)) {
             tautology = 1;
             return null;
@@ -356,14 +387,14 @@ public class MuCalculus {
             form.setParents(formulas);
             return form;
         }
-
         if(structuralRule2(formulas))
         {
             resetIndexes.add(nodeIndex);
             bTree.add(formulas, formulas, "left");
             form.addParrent("reset");
             System.out.print("reset\n");
-            form.setParents(formulas);
+            for(String s : parents)
+                form.addParrent(s);
             return form;
         }
 
@@ -374,7 +405,7 @@ public class MuCalculus {
             return form;
         }
 
-        if(Rule4(form, abbrev, bTree))
+        if(Rule4(formulas, abbrev, bTree))
             return null;
 
         form = Rule7(formulas);
@@ -410,7 +441,7 @@ public class MuCalculus {
             form.setParents(formulas);
             return form;
         }
-
+        validity = 0;
         return null;
     }
 
@@ -445,18 +476,20 @@ public class MuCalculus {
             nodes = formulas.getParents();
             nodeIndex ++;
             if(formulas.getParents().contains(getNode(formulas)))
-                return false;
+                break;
             index = formulas.getParents().indexOf(getNode(formulas));
             formulas = applyRules(formulas, abbrev, bTree);
             if(formulas != null) {
                 printNode(formulas.getKey());
             }
-            else
+            else {
+                //validity = 0;
                 return false;
-
-        } while(!formulas.getParents().contains(getNode(formulas)));
-        if(formulas.getParents().indexOf("reset")> index -1)
-            valid = 1;
+            }
+        } while(!formulas.getParents().contains(getNode(formulas)) && tautology == 0);
+        if(formulas != null)
+            if(formulas.getParents().indexOf("reset")> index -1)
+                valid = 1;
         if(valid ==1 || tautology ==1) {
             valid = 0;
             tautology = 0;
@@ -464,7 +497,7 @@ public class MuCalculus {
         else {
             validity = 0;
         }
-        return false;
+        return true;
     }
 
 
@@ -480,7 +513,7 @@ public class MuCalculus {
 
 //        formula f1  = new formula("nZ.or([a]Z , W)");
 //        f1.abbrev = "Z";
-//        formulas.add(f1);
+//
 //        formula f2 = new formula("mW.and([a]W , NP)");
 //        f2.abbrev = "W";
 //        abbrev.add(f1); abbrev.add(f2);
@@ -488,8 +521,16 @@ public class MuCalculus {
 //        f3.abbrev = "X";
 //        formula f4 = new formula("mY.or(<a>Y , P)");
 //        f4.abbrev = "Y";
-//        formulas.add(f3);
+//        formulas.add(f3); formulas.add(f1);
 //        abbrev.add(f3); abbrev.add(f4);
+
+//        formula f1  = new formula("nZ.[a]or(Z , P)");
+//        f1.abbrev = "Z";
+//        formula f2 = new formula("mX.<a>and(X , NP)");
+//        f2.abbrev = "X";
+//        abbrev.add(f1);abbrev.add(f2);
+//        formula f = new formula("and(nZ.[a]or(Z , P) , mX.<a>and(X , NP))");
+//        formulas.add(f);
         Node root = new Node(formulas);
         isValid(root, abbrev, new BinaryTree(formulas));
         if(validity == 1)

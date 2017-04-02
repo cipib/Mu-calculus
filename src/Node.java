@@ -10,6 +10,7 @@ public class Node {
     private Node left;
     private Node right;
     private List<String> parents = new ArrayList<>();
+    private List<String> ws = new ArrayList<>();
 
     Node (List<formula> key) {
         this.key = key;
@@ -65,4 +66,10 @@ public class Node {
     public void addParrent(String reset) {
         parents.add(reset);
     }
+
+    public List<String> getws() {
+        return ws;
+    }
+
+
 }
