@@ -3,17 +3,12 @@
   <component name="AnalysisUIOptions">
     <option name="SCOPE_TYPE" value="3" />
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/MuCalculus.java" line="533" mnemonic="0" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b9b0cdfb-0648-4ffe-bfac-2a4a70d3a429" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/MuCalculus.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/MuCalculus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/Node.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/Node.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/main.class" afterPath="$PROJECT_DIR$/out/production/mu-calculus/main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input" afterPath="$PROJECT_DIR$/input" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/mu-calculus/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/mu-calculus/input" afterPath="$PROJECT_DIR$/out/production/mu-calculus/input" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MuCalculus.java" afterPath="$PROJECT_DIR$/src/MuCalculus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Node.java" afterPath="$PROJECT_DIR$/src/Node.java" />
     </list>
     <ignored path="mu-calculus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,7 +69,7 @@
     <favorites_list name="mu-calculus" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4833744">
+    <splitter split-orientation="horizontal" split-proportion="0.53940886">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="MuGrammar.g4" pinned="false" current-in-tab="false">
@@ -91,7 +86,7 @@
             <entry file="file://$PROJECT_DIR$/input">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="0" column="17" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+                  <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -102,7 +97,12 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-                  <folding />
+                  <folding>
+                    <element signature="e#206#207#0" expanded="false" />
+                    <element signature="e#238#239#0" expanded="false" />
+                    <element signature="e#269#270#0" expanded="false" />
+                    <element signature="e#296#297#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -110,8 +110,8 @@
           <file leaf-file-name="MuCalculus.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/MuCalculus.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="8.445585">
-                  <caret line="463" column="26" selection-start-line="463" selection-start-column="26" selection-end-line="463" selection-end-column="26" />
+                <state vertical-scroll-proportion="0.18480493">
+                  <caret line="329" column="24" selection-start-line="329" selection-start-column="24" selection-end-line="329" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -122,7 +122,10 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-                  <folding />
+                  <folding>
+                    <element signature="e#167#168#0" expanded="false" />
+                    <element signature="e#204#205#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -132,7 +135,27 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-                  <folding />
+                  <folding>
+                    <element signature="imports" expanded="false" />
+                    <element signature="e#475#476#0" expanded="false" />
+                    <element signature="e#505#506#0" expanded="false" />
+                    <element signature="e#542#543#0" expanded="false" />
+                    <element signature="e#568#569#0" expanded="false" />
+                    <element signature="e#606#607#0" expanded="false" />
+                    <element signature="e#638#639#0" expanded="false" />
+                    <element signature="e#667#668#0" expanded="false" />
+                    <element signature="e#694#695#0" expanded="false" />
+                    <element signature="e#735#736#0" expanded="false" />
+                    <element signature="e#769#770#0" expanded="false" />
+                    <element signature="e#799#800#0" expanded="false" />
+                    <element signature="e#827#828#0" expanded="false" />
+                    <element signature="e#866#867#0" expanded="false" />
+                    <element signature="e#896#897#0" expanded="false" />
+                    <element signature="e#1421#1422#0" expanded="false" />
+                    <element signature="e#1455#1456#0" expanded="false" />
+                    <element signature="e#1490#1491#0" expanded="false" />
+                    <element signature="e#1515#1516#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -146,7 +169,27 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
                   <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-                  <folding />
+                  <folding>
+                    <element signature="imports" expanded="false" />
+                    <element signature="e#475#476#0" expanded="false" />
+                    <element signature="e#505#506#0" expanded="false" />
+                    <element signature="e#542#543#0" expanded="false" />
+                    <element signature="e#568#569#0" expanded="false" />
+                    <element signature="e#606#607#0" expanded="false" />
+                    <element signature="e#638#639#0" expanded="false" />
+                    <element signature="e#667#668#0" expanded="false" />
+                    <element signature="e#694#695#0" expanded="false" />
+                    <element signature="e#735#736#0" expanded="false" />
+                    <element signature="e#769#770#0" expanded="false" />
+                    <element signature="e#799#800#0" expanded="false" />
+                    <element signature="e#827#828#0" expanded="false" />
+                    <element signature="e#866#867#0" expanded="false" />
+                    <element signature="e#896#897#0" expanded="false" />
+                    <element signature="e#1421#1422#0" expanded="false" />
+                    <element signature="e#1455#1456#0" expanded="false" />
+                    <element signature="e#1490#1491#0" expanded="false" />
+                    <element signature="e#1515#1516#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -195,8 +238,8 @@
         <option value="$PROJECT_DIR$/src/muCalculus.java" />
         <option value="$PROJECT_DIR$/src/BinaryTree.java" />
         <option value="$PROJECT_DIR$/src/Node.java" />
-        <option value="$PROJECT_DIR$/input" />
         <option value="$PROJECT_DIR$/src/MuCalculus.java" />
+        <option value="$PROJECT_DIR$/input" />
       </list>
     </option>
   </component>
@@ -238,8 +281,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -288,7 +329,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -655,7 +698,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283433" sideWeight="0.50416666" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39021957" sideWeight="0.49583334" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4181637" sideWeight="0.49583334" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15416667" sideWeight="0.4940476" order="0" side_tool="false" content_ui="combo" />
@@ -720,12 +763,6 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MuCalculus.java</url>
-          <line>458</line>
-          <properties />
-          <option name="timeStamp" value="415" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MuCalculus.java</url>
           <line>289</line>
           <properties />
           <option name="timeStamp" value="416" />
@@ -756,42 +793,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MuCalculus.java</url>
-          <line>367</line>
-          <properties />
-          <option name="timeStamp" value="422" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MuCalculus.java</url>
-          <line>362</line>
-          <properties />
-          <option name="timeStamp" value="423" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MuCalculus.java</url>
-          <line>363</line>
-          <properties />
-          <option name="timeStamp" value="424" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MuCalculus.java</url>
-          <line>364</line>
-          <properties />
-          <option name="timeStamp" value="425" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MuCalculus.java</url>
-          <line>365</line>
-          <properties />
-          <option name="timeStamp" value="426" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MuCalculus.java</url>
-          <line>366</line>
-          <properties />
-          <option name="timeStamp" value="427" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MuCalculus.java</url>
           <line>105</line>
           <properties />
           <option name="timeStamp" value="429" />
@@ -818,7 +819,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="434" />
+      <option name="time" value="435" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -879,7 +880,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="e#206#207#0" expanded="false" />
+            <element signature="e#238#239#0" expanded="false" />
+            <element signature="e#269#270#0" expanded="false" />
+            <element signature="e#296#297#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -918,7 +924,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
+          <folding>
+            <element signature="e#206#207#0" expanded="false" />
+            <element signature="e#238#239#0" expanded="false" />
+            <element signature="e#269#270#0" expanded="false" />
+            <element signature="e#296#297#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -949,7 +960,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-          <folding />
+          <folding>
+            <element signature="e#206#207#0" expanded="false" />
+            <element signature="e#238#239#0" expanded="false" />
+            <element signature="e#269#270#0" expanded="false" />
+            <element signature="e#296#297#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1154,11 +1170,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Node.java">
+    <entry file="file://$PROJECT_DIR$/src/BinaryTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding>
+            <element signature="e#167#168#0" expanded="false" />
+            <element signature="e#204#205#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1166,22 +1185,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#206#207#0" expanded="false" />
+            <element signature="e#238#239#0" expanded="false" />
+            <element signature="e#269#270#0" expanded="false" />
+            <element signature="e#296#297#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BinaryTree.java">
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-          <folding />
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#475#476#0" expanded="false" />
+            <element signature="e#505#506#0" expanded="false" />
+            <element signature="e#542#543#0" expanded="false" />
+            <element signature="e#568#569#0" expanded="false" />
+            <element signature="e#606#607#0" expanded="false" />
+            <element signature="e#638#639#0" expanded="false" />
+            <element signature="e#667#668#0" expanded="false" />
+            <element signature="e#694#695#0" expanded="false" />
+            <element signature="e#735#736#0" expanded="false" />
+            <element signature="e#769#770#0" expanded="false" />
+            <element signature="e#799#800#0" expanded="false" />
+            <element signature="e#827#828#0" expanded="false" />
+            <element signature="e#866#867#0" expanded="false" />
+            <element signature="e#896#897#0" expanded="false" />
+            <element signature="e#1421#1422#0" expanded="false" />
+            <element signature="e#1455#1456#0" expanded="false" />
+            <element signature="e#1490#1491#0" expanded="false" />
+            <element signature="e#1515#1516#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/input">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="17" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1196,8 +1240,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MuCalculus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.445585">
-          <caret line="463" column="26" selection-start-line="463" selection-start-column="26" selection-end-line="463" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.18480493">
+          <caret line="329" column="24" selection-start-line="329" selection-start-column="24" selection-end-line="329" selection-end-column="24" />
           <folding />
         </state>
       </provider>

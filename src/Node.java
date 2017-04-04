@@ -59,7 +59,8 @@ public class Node {
 
     public void setParents(Node node) {
         if(node.getParents() != null)
-            parents.addAll(node.getParents());
+            for(int i = 0; i< node.getParents().size(); i++)
+                parents.add(node.getParents().get(i));
 
         parents.add(getNode(node));
     }
@@ -71,5 +72,14 @@ public class Node {
         return ws;
     }
 
-
+    public void setws(Node node) {
+        if(node.getws() != null)
+            ws.addAll(node.getws());
+        String s ="";
+        for(formula f: node.getKey()) {
+            s = s + f.names;
+        }
+        ws.add(s);
+    }
+    public void addws(String s) { ws.add(s); }
 }
