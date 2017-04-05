@@ -440,9 +440,7 @@ public class MuCalculus {
             return form;
         }
 
-        if(Rule4(formulas, abbrev, bTree)) {
-            return null;
-        }
+
 
         form = Rule7(formulas);
         if(!form.getKey().equals(formulas.getKey())) {
@@ -460,6 +458,7 @@ public class MuCalculus {
             return form;
         }
 
+
         List<formula> abb = new ArrayList<>(formulas.getKey());
         for (formula f : abbrev)
             if (abbrevIndex(formulas.getKey(), f.abbrev) != -1) {
@@ -474,6 +473,10 @@ public class MuCalculus {
                 abbreviation.setws(formulas);
                 return abbreviation;
             }
+
+        if(Rule4(formulas, abbrev, bTree)) {
+            return null;
+        }
 
         form = Rule5(formulas);
         if(!form.getKey().equals(formulas.getKey())) {
