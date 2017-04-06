@@ -100,7 +100,7 @@ public class MuCalculus {
 
 
                     /* Rule4: F and G --> two trees */
-    public static boolean Rule4(Node form, List<formula> abbrev, BinaryTree bTree) {
+    public static boolean Rule4(Node form, List<formula> abbrev, BinaryTree bTree, List<String> names) {
         List<formula> newList = new ArrayList<>(form.getKey());
         for(formula f: newList)
             if(f.toString().startsWith("and")) {
@@ -140,11 +140,11 @@ public class MuCalculus {
                     /* Recursively check the trees */
                 trees++;
                 System.out.print("\nTree " + trees+ ".1 : \n");
-                isValid(leftNode, abbrev, bTree);
+                isValid(leftNode, abbrev, bTree, names);
 
 
                 System.out.print("\nTree " + trees + ".2 : \n");
-                isValid(rightNode, abbrev, bTree);
+                isValid(rightNode, abbrev, bTree, names);
                 trees--;
                 return true;
             }
@@ -154,8 +154,9 @@ public class MuCalculus {
 
                     /* Rule5: Modal Rule */
     // TODO: to apply this rule on the most outermost formula starting with [a]
-    public static Node Rule5(Node form) {
+    public static Node Rule5(Node form, List<formula> abbrev, BinaryTree bt, List<String> names) {
         List<formula> newList = new ArrayList<>(form.getKey());
+        Collections.reverse(form.getKey());
         for(formula f : form.getKey())
             if(f.toString().startsWith("[a]")) {
                 newList.clear();
@@ -168,6 +169,15 @@ public class MuCalculus {
                     }
                 break;
             }
+//            for(formula f: form.getKey())
+//                if(f.toString().startsWith("[a]")) {
+//                    formula f1 = create(f, f.toString().substring(3));
+//                    newList.add(f1);
+//                    isValid(new Node(newList), abbrev, bt, names);
+//                    if(validity == 1)
+//                        return new Node(newList);
+//                    newList.remove(f1);
+//                }
             return new Node(newList);
     }
 
@@ -297,7 +307,7 @@ public class MuCalculus {
     }
 
     public static List<String> parents = new ArrayList<>();
-    public static List<String> names = new ArrayList<>();
+
                     /* Structural Rule 2: Reset rule */
     public static boolean structuralRule2(Node form) {
 
@@ -316,7 +326,6 @@ public class MuCalculus {
                 if(prefix != null) {
                     parents = form.getParents();
                     parents.add(getNode(form));
-                    names  = form.getws();
                     doReset(form.getKey(), prefix);
                     return true;
                 }
@@ -402,7 +411,7 @@ public class MuCalculus {
 
 
                     /* Apply Rules */
-    public static Node applyRules(Node formulas, List<formula> abbrev, BinaryTree bTree) {
+    public static Node applyRules(Node formulas, List<formula> abbrev, BinaryTree bTree, List<String> names) {
         for(formula f: formulas.getKey())
             if(f.toString().startsWith("("))
                 f.form = f.toString().substring(1, f.toString().length() -1);
@@ -426,8 +435,6 @@ public class MuCalculus {
             System.out.print("reset\n");
             for(String s : parents)
                 form.addParrent(s);
-            for(String s : names)
-                form.addws(s);
             form.addParrent("reset");
             return form;
         }
@@ -474,11 +481,11 @@ public class MuCalculus {
                 return abbreviation;
             }
 
-        if(Rule4(formulas, abbrev, bTree)) {
+        if(Rule4(formulas, abbrev, bTree, names)) {
             return null;
         }
 
-        form = Rule5(formulas);
+        form = Rule5(formulas, abbrev, bTree, names);
         if(!form.getKey().equals(formulas.getKey())) {
             bTree.add(formulas, form, "left");
             form.setParents(formulas);
@@ -513,43 +520,45 @@ public class MuCalculus {
 
                 /* See if there is any common string in a list of strings */
     public static boolean commonName(List<String> names, int i1, int i2) {
-        int v = 1;
-        for(String str: names.subList(i1, i2 + 1)) {
-            for(int i =0;i< (names.get(names.size()-1)).length(); i+=2) {
-                if (!str.contains(names.get(names.size() - 1).substring(i, i = 1)))
-                    valid = 0;
-                if (valid == 1)
-                    return true;
-            }
-            if(valid ==1)
+        int v =1;
+        String str = names.get(i1);
+            for(int i =0;i< names.get(i1).length()-2; i+=2)
+                for(String str2: names.subList(i1, i2+1)) {
+                    if (!str2.contains(str.substring(i, i + 2)))
+                        v = 0;
+                    if (v == 1)
+                        return true;
+                }
+            if(v ==1)
                 return true;
-        }
         return false;
     }
 
 
                 /* Validate the formula */
-    public static boolean isValid(Node formulas, List<formula> abbrev, BinaryTree bTree) {
+    public static boolean isValid(Node formulas, List<formula> abbrev, BinaryTree bTree, List<String> names) {
         printNode(formulas.getKey());
         int index = 0;
+        String s = "";
         do {
-            nodes = formulas.getParents();
-            nodeIndex ++;
+/*            nodes = formulas.getParents();
+            nodeIndex ++;*/
             if(formulas.getParents().contains(getNode(formulas)))
                 break;
+            formulas = applyRules(formulas, abbrev, bTree, names);
 
-            formulas = applyRules(formulas, abbrev, bTree);
             if(formulas != null) {
                 printNode(formulas.getKey());
-                //System.out.print(formulas.getws() + "\n");
+                for(formula f: formulas.getKey())
+                    s= s+ f.names;
+                names.add(s);
             }
             else {
-                //validity = 0;
                 return false;
             }
         } while(!formulas.getParents().contains(getNode(formulas)) && tautology == 0);
         index = formulas.getParents().indexOf(getNode(formulas));
-        //System.out.print(formulas.getParents() + "\n" + index + "\n");
+
         for(int i = formulas.getParents().size() -1; i > 0; i--) {
             if (formulas.getParents().get(i).equals("reset")) {
                 valid = 1;
@@ -558,14 +567,15 @@ public class MuCalculus {
             if (formulas.getParents().get(i).equals(getNode(formulas)))
                 break;
         }
-//            if (!commonName(formulas.getws(), index , formulas.getws().size() - 1))
-//                valid = 0;
+            if (!commonName(names, index , names.size() - 1))
+                valid = 0;
 
         if(valid ==1 || tautology ==1) {
             valid = 0;
             tautology = 0;
         }
         else {
+            System.out.print("\nNOT VALID \n");
             validity = 0;
         }
         return true;
@@ -577,6 +587,7 @@ public class MuCalculus {
         List<formula> formulas = new ArrayList<>();
         List<formula> abbrev = new ArrayList<>();
         List<String> nodes = new ArrayList<>();
+        List<String> names = new ArrayList<>();
 
         abbrev = abbreviations(new File(args[0]));
         //System.out.print(abbrev);
@@ -587,28 +598,13 @@ public class MuCalculus {
             }
         }
 
-//        formula f1  = new formula("nZ.or([a]Z , W)");
-//        f1.abbrev = "Z";
-//
-//        formula f2 = new formula("mW.and([a]W , NP)");
-//        f2.abbrev = "W";
-//        abbrev.add(f1); abbrev.add(f2);
-//        formula f3 = new formula("nX.and(<a>X , Y)");
-//        f3.abbrev = "X";
-//        formula f4 = new formula("mY.or(<a>Y , P)");
-//        f4.abbrev = "Y";
-//        formulas.add(f3); formulas.add(f1);
-//        abbrev.add(f3); abbrev.add(f4);
-
-//        formula f1  = new formula("nZ.[a]or(Z , P)");
-//        f1.abbrev = "Z";
-//        formula f2 = new formula("mX.<a>and(X , NP)");
-//        f2.abbrev = "X";
-//        abbrev.add(f1);abbrev.add(f2);
-//        formula f = new formula("and(nZ.[a]or(Z , P) , mX.<a>and(X , NP))");
-//        formulas.add(f);
         Node root = new Node(formulas);
-        isValid(root, abbrev, new BinaryTree(formulas));
+        String s = "";
+        for(formula f : root.getKey())
+            s = s + f.names;
+        names.add(s);
+        validity = 1;
+        isValid(root, abbrev, new BinaryTree(formulas), names);
         if(validity == 1)
             System.out.print("Formula is valid");
         else

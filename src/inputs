@@ -1,0 +1,7 @@
+or(mX.nZ.mY.nA.and(or([a]X , <a>Z) , or([a]Y , <a>A)) , nT.mS.nR.mB.or(and(<a>T , [a]S) , and(<a>R , [a]B)))
+or(mX.nZ.mY.and(or([a]X , <a>Z) , [a]Y) , nT.mS.nR.or(and(<a>T , [a]S) , <a>R))
+nZ.mX.or([a]Z , <a>X)
+or(nZ.[a]or(Z , P) , mX.<a>and(X , NP))
+or(nX.and(<a>X , mY.or(<a>Y, P)) , nZ.or([a]Z , mW.and([a]W , NP)))
+or(mX.nZ.mY.nA.mD.nE.and(or([a]X , or(<a>Z , [a]D)) , or(and([a]Y , [a]E) , <a>A)) , nT.mS.nR.mB.nF.mG.or(and(<a>T , and([a]S , <a>F)) , and(or(<a>R , <a>G) , [a]B))
+or(mX.nZ.mY.nA.mD.nE.and(or([a]X , or(<a>Z , or([a]D , mN.or(<a>N , D)))) , or(and([a]Y , [a]E) , <a>A)) , nT.mS.nR.mB.nF.mG.or(and(<a>T , and([a]S , and(<a>F , nM.and([a]M , F)))) , and(or(<a>R , <a>G) , [a]B))

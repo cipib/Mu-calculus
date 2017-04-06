@@ -1,1 +1,1 @@
-or(nX.and(<a>X , mY.or(<a>Y , P)) , nZ.or([a]Z , mW.and([a]W , NP)))
+and(mX.nZ.mY.nA.mD.nE.and(or([a]X , or(<a>Z , [a]D)) , or(and([a]Y , [a]E) , <a>A)) , nT.mS.nR.mB.nF.mG.or(and(<a>T , and([a]S , <a>F)) , and(or(<a>R , <a>G) , [a]B))
